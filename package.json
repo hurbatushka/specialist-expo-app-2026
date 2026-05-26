@@ -12,8 +12,9 @@
     "lint": "expo lint",
     "lint:hooks": "node ./scripts/lint-react-hooks.mjs",
     "doctor": "bunx expo-doctor",
-    "build:ios": "npm run doctor && npm run lint:hooks && bunx eas-cli build --profile production --platform ios",
-    "build:ios:submit": "npm run doctor && npm run lint:hooks && bunx eas-cli build --profile production --platform ios --auto-submit",
+    "verify:eas-root": "node ./scripts/verify-eas-root.mjs",
+    "build:ios": "npm run verify:eas-root && npm run doctor && npm run lint:hooks && bunx eas-cli build --profile production --platform ios",
+    "build:ios:submit": "npm run verify:eas-root && npm run doctor && npm run lint:hooks && bunx eas-cli build --profile production --platform ios --auto-submit",
     "submit:ios": "bunx eas-cli submit --profile production --platform ios --latest"
   },
   "dependencies": {
