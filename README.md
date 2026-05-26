@@ -3,7 +3,7 @@
 Expo (SDK 55), отдельный репозиторий. Backend: [blagodeti-crm-app](https://github.com/hurbatushka/blagodeti-crm-app).
 
 - **EAS:** `@hurbatushka/blagodeti-specialist` (`e655c07a-66cc-4a69-8f77-d3555dacfe64`)
-- **iOS bundle:** `by.blagodeti.specialist`
+- **iOS bundle:** `com.blagodeti.app` (ASC 6757393518)
 
 ## Локально
 

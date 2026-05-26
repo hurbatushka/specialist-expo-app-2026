@@ -1,6 +1,6 @@
 # MOBILE APP (specialist-expo-app) — правила для агента
 
-Приложение специалиста: bundle `by.blagodeti.specialist`, API-префикс `/api/specialist/*`, логин `POST /api/auth/specialist/login` (не client).
+Приложение специалиста: bundle `com.blagodeti.app` (ASC 6757393518), API `/api/specialist/*`, логин `POST /api/auth/specialist/login`.
 
 ## React Hooks (обязательно)
 

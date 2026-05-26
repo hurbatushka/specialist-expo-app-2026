@@ -11,7 +11,7 @@
     "ios": {
       "supportsTablet": true,
       "icon": "./assets/images/icon.png",
-      "bundleIdentifier": "by.blagodeti.specialist",
+      "bundleIdentifier": "com.blagodeti.app",
       "appleTeamId": "772S535M26",
       "associatedDomains": [
         "webcredentials:app.blagodeti.by"
@@ -23,10 +23,10 @@
         "NSCameraUsageDescription": "Приложению необходим доступ к камере для проведения онлайн-занятий.",
         "NSMicrophoneUsageDescription": "Приложению необходим доступ к микрофону для проведения онлайн-занятий."
       },
-      "buildNumber": "3"
+      "buildNumber": "4"
     },
     "android": {
-      "package": "by.blagodeti.specialist",
+      "package": "com.blagodeti.app",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/icon.png"
