@@ -1,37 +1,42 @@
 # TestFlight (iOS) — специалисты
 
-Проект: `@hurbatushka/blagodeti-specialist` · bundle `by.blagodeti.specialist` · ASC app id `6757393518`.
+- **EAS:** `@hurbatushka/blagodeti-specialist`
+- **Bundle ID (IPA):** `by.blagodeti.specialist` — в `app.json`, менять нельзя под существующий ASC
+- **Репо:** https://github.com/hurbatushka/specialist-expo-app-2026
 
-Репозиторий: https://github.com/hurbatushka/specialist-expo-app-2026
+## App Store Connect
 
-## Перед сборкой
+В ASC должно быть **отдельное** iOS-приложение с bundle **`by.blagodeti.specialist`**.
 
-1. **Хуки React:** `npm run lint:hooks` — уже в `npm run build:ios*`.
-2. **Lockfile:** после правок `package.json`:
-   ```bash
-   bun install
-   git add bun.lock && git commit -m "chore: sync bun.lock"
-   ```
-3. Версия: `app.json` → `expo.version` (сейчас **1.0.0**), buildNumber — `autoIncrement` в `eas.json`.
-4. API: `EXPO_PUBLIC_API_URL` в `eas.json` → `production.env`.
-5. `eas login` (аккаунт **hurbatushka**).
-6. На [expo.dev](https://expo.dev/accounts/hurbatushka/projects/blagodeti-specialist) → **GitHub** должен быть подключён репозиторий `specialist-expo-app-2026` (не monorepo CRM).
+Запись **6757393518** («БлагоДети: Специалисты!») привязана к **`com.blagodeti.app`** — это **не** наш IPA, submit туда не пройдёт (ошибка 90055).
 
-## Сборка
+После создания приложения в [App Store Connect](https://appstoreconnect.apple.com) → Apps → + → bundle `by.blagodeti.specialist` — возьмите **Apple ID** (число в URL приложения) и добавьте в `eas.json`:
 
-```bash
-bun install
-npm run build:ios          # production → App Store
-# или internal TestFlight:
-bunx eas-cli build --profile testflight --platform ios
+```json
+"submit": {
+  "production": {
+    "ios": { "ascAppId": "НОВЫЙ_ID" }
+  }
+}
 ```
 
-С submit:
+Без `ascAppId` EAS ищет приложение по bundle id автоматически (если оно уже есть в ASC).
+
+| Приложение в ASC | Bundle | ascAppId |
+|------------------|--------|----------|
+| БлагоДети: Всегда рядом! (клиенты) | `by.blagodeti.app` | `6752854525` |
+| Специалисты (нужно создать) | `by.blagodeti.specialist` | *новый* |
+| Старое «Специалисты» | `com.blagodeti.app` | `6757393518` — **не использовать** |
+
+## Сборка и submit
+
+Только из корня **specialist-expo-app-2026**:
 
 ```bash
+npm run build:ios
+npm run submit:ios
+# или одной командой:
 npm run build:ios:submit
 ```
 
-## EAS из корня репо
-
-Все команды запускать из **корня этого репозитория** (не из `blagodeti-crm-app`).
+Сборка из `blagodeti-crm-app/MOBILE APP/...` ломается — см. `npm run verify:eas-root`.
