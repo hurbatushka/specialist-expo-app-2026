@@ -1,0 +1,49 @@
+{
+  "cli": {
+    "version": ">= 19.0.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal",
+      "ios": {
+        "simulator": true
+      }
+    },
+    "testflight": {
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://app.blagodeti.by/api",
+        "EXPO_PUBLIC_EAS_PROJECT_ID": "e655c07a-66cc-4a69-8f77-d3555dacfe64"
+      },
+      "ios": {
+        "autoIncrement": "buildNumber",
+        "buildConfiguration": "Release",
+        "credentialsSource": "remote"
+      }
+    },
+    "production": {
+      "distribution": "store",
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://app.blagodeti.by/api",
+        "EXPO_PUBLIC_EAS_PROJECT_ID": "e655c07a-66cc-4a69-8f77-d3555dacfe64"
+      },
+      "ios": {
+        "autoIncrement": "buildNumber",
+        "buildConfiguration": "Release",
+        "credentialsSource": "remote"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "ascAppId": "6757393518"
+      }
+    }
+  }
+}

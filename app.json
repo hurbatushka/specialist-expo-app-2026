@@ -1,0 +1,106 @@
+{
+  "expo": {
+    "name": "БлагоДети: Специалисты!",
+    "slug": "blagodeti-specialist",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "blagodeti-specialist",
+    "userInterfaceStyle": "automatic",
+    "owner": "hurbatushka",
+    "ios": {
+      "supportsTablet": true,
+      "icon": "./assets/images/icon.png",
+      "bundleIdentifier": "by.blagodeti.specialist",
+      "appleTeamId": "772S535M26",
+      "associatedDomains": [
+        "webcredentials:app.blagodeti.by"
+      ],
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "CFBundleDevelopmentRegion": "ru",
+        "CFBundleAllowMixedLocalizations": true,
+        "NSCameraUsageDescription": "Приложению необходим доступ к камере для проведения онлайн-занятий.",
+        "NSMicrophoneUsageDescription": "Приложению необходим доступ к микрофону для проведения онлайн-занятий."
+      },
+      "buildNumber": "3"
+    },
+    "android": {
+      "package": "by.blagodeti.specialist",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/images/icon.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/logo_fav.png"
+    },
+    "plugins": [
+      [
+        "expo-quick-actions",
+        {
+          "iosActions": [
+            {
+              "id": "schedule",
+              "title": "Расписание",
+              "subtitle": "Занятия на сегодня",
+              "icon": "symbol:calendar",
+              "params": {
+                "href": "/schedule"
+              }
+            },
+            {
+              "id": "profile",
+              "title": "Профиль",
+              "subtitle": "Личные данные",
+              "icon": "symbol:person.fill",
+              "params": {
+                "href": "/menu/profile"
+              }
+            }
+          ]
+        }
+      ],
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#208AEF",
+          "android": {
+            "image": "./assets/images/icon.png",
+            "imageWidth": 76
+          }
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/icon.png",
+          "color": "#208AEF"
+        }
+      ],
+      [
+        "@config-plugins/react-native-webrtc",
+        {
+          "cameraPermission": "Приложению необходим доступ к камере для проведения онлайн-занятий.",
+          "microphonePermission": "Приложению необходим доступ к микрофону для проведения онлайн-занятий."
+        }
+      ],
+      "expo-font",
+      "expo-image",
+      "expo-secure-store",
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "e655c07a-66cc-4a69-8f77-d3555dacfe64"
+      }
+    }
+  }
+}
